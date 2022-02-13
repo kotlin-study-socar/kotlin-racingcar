@@ -1,7 +1,13 @@
 package moody.racingcar.domain
 
-class Car(val name: String, val position: Int = 0) {
+import moody.racingcar.exception.CarNameException
 
+class Car(val name: String, val position: Int = 0) {
+    init {
+        if(name.length > 5){
+            throw CarNameException()
+        }
+    }
     fun move(fuel: Int): Car {
         if (fuel >= 4) {
             return Car(name, position + 1)
