@@ -3,8 +3,8 @@ package ornn.racingcar
 import io.kotest.core.spec.style.AnnotationSpec
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.assertThrows
-import ornn.racingcar.Resource.Strings
-import ornn.racingcar.Service.InputService
+import ornn.racingcar.resource.Strings
+import ornn.racingcar.service.InputService
 import ornn.racingcar.exception.IllegalInputException
 
 class ApplicationTestWithAnnotationSpec : AnnotationSpec() {

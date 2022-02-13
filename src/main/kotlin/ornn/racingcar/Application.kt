@@ -1,6 +1,6 @@
 package ornn.racingcar
 
-import ornn.racingcar.Service.InputService
+import ornn.racingcar.service.InputService
 
 fun main(){
     val inputService = InputService()

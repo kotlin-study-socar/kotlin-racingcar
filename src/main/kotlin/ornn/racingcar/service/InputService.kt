@@ -1,6 +1,6 @@
-package ornn.racingcar.Service
+package ornn.racingcar.service
 
-import ornn.racingcar.Resource.Strings
+import ornn.racingcar.resource.Strings
 import ornn.racingcar.exception.IllegalInputException
 
 class InputService {

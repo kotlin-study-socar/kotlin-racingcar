@@ -3,8 +3,8 @@ package ornn.racingcar
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
 import org.junit.jupiter.api.assertThrows
-import ornn.racingcar.Resource.Strings
-import ornn.racingcar.Service.InputService
+import ornn.racingcar.resource.Strings
+import ornn.racingcar.service.InputService
 import ornn.racingcar.exception.IllegalInputException
 
 class ApplicationTestWithBehaviorSpec : BehaviorSpec({

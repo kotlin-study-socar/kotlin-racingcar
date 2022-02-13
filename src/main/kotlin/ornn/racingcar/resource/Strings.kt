@@ -1,4 +1,4 @@
-package ornn.racingcar.Resource
+package ornn.racingcar.resource
 
 class Strings {
     companion object{
