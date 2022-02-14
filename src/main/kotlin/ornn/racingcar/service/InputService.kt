@@ -16,7 +16,7 @@ class InputService {
                 checkCarNameMoreThanFive(carNames)
                 break
             } catch (e: IllegalInputException) {
-                println(Strings.ERROR_MESSAGE + " " + Strings.ERROR_INFO_INVALID_CARNAME)
+                println(Strings.ERROR_MESSAGE + " " + Strings.ERROR_INFO_INVALID_INPUT)
             }
         }
         return carNames
@@ -32,7 +32,7 @@ class InputService {
                 checkPlayTimeIsNum(input)
                 break
             } catch (e: IllegalInputException) {
-                println(Strings.ERROR_MESSAGE + " " + Strings.ERROR_INFO_INVALID_CARNAME)
+                println(Strings.ERROR_MESSAGE + " " + Strings.ERROR_INFO_INVALID_INPUT)
             }
         }
         return input.toInt()

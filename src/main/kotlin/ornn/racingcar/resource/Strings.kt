@@ -6,6 +6,6 @@ class Strings {
         const val ERROR_MESSAGE = "[ERROR]"
         const val ASK_HOW_MANY_TIMES_TO_PLAY = "시도할 회수는 몇회인가요?"
         const val RESULT = "실행 결과"
-        const val ERROR_INFO_INVALID_CARNAME = "잘못입력하셨습니다"
+        const val ERROR_INFO_INVALID_INPUT = "잘못입력하셨습니다"
     }
 }

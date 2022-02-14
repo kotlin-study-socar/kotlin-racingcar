@@ -11,4 +11,17 @@ class CarManager{
             cars.add(Car(carName))
         }
     }
+
+    fun printCarsRecord() {
+        for (car in cars) {
+            car.printRecord()
+        }
+        println()
+    }
+
+    fun moveCars(){
+        for (car in cars) {
+            car.move()
+        }
+    }
 }
