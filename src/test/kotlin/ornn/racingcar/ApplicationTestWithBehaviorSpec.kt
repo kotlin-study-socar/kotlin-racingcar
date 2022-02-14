@@ -30,6 +30,28 @@ class ApplicationTestWithBehaviorSpec : BehaviorSpec({
             }
         }
     }
+
+    given("Playing Times 입력"){
+        println(Strings.ASK_HOW_MANY_TIMES_TO_PLAY)
+        `when`("아무것도 입력하지 않으면"){
+            val input = ""
+            then("오류가 발생해야된다."){
+                assertThrows<IllegalInputException> {
+                    inputService.checkInputIsNull(input)
+                }
+            }
+        }
+
+        `when`("숫자를 입력하지 않으면"){
+            val input = "kk"
+            then("오류가 발생해야된다."){
+                assertThrows<IllegalInputException> {
+                    inputService.checkPlayTimeIsNum(input)
+                }
+            }
+        }
+    }
+
 }) {
 
     companion object {
