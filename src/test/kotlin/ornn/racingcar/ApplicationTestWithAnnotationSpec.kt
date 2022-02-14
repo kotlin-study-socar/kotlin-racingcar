@@ -17,7 +17,7 @@ class ApplicationTestWithAnnotationSpec : AnnotationSpec() {
     fun 전체이름_널체크() {
         val input = ""
         val actual = assertThrows<IllegalInputException> {
-            inputService.carNamesNullInput(input)
+            inputService.checkInputIsNull(input)
         }
         actual.message shouldBe Strings.ERROR_MESSAGE
     }
@@ -25,9 +25,9 @@ class ApplicationTestWithAnnotationSpec : AnnotationSpec() {
     @Test
     fun 자동차_이름_5자_이상_예외처리() {
         val input = "socarcar,sukwoo"
-        val carNames = input.split(",")
+        val carsName = input.split(",")
         val actual = assertThrows<IllegalInputException> {
-            inputService.carNameMoreThanFive(carNames)
+            inputService.checkCarNameMoreThanFive(carsName)
         }
         actual.message shouldBe Strings.ERROR_MESSAGE
     }

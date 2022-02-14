@@ -15,17 +15,17 @@ class ApplicationTestWithBehaviorSpec : BehaviorSpec({
             val input = ""
             then("에러가 발생한다"){
                 shouldThrow<IllegalInputException> {
-                    inputService.carNamesNullInput(input)
+                    inputService.checkInputIsNull(input)
                 }
             }
         }
 
         `when`("Car 이름이 5자 이상이면"){
             val input = "socarcar,sukwoo"
-            val carNames = input.split(",")
+            val carsName = input.split(",")
             then("오류가 발생해야된다"){
                 assertThrows<IllegalInputException> {
-                    inputService.carNameMoreThanFive(carNames)
+                    inputService.checkCarNameMoreThanFive(carsName)
                 }
             }
         }
