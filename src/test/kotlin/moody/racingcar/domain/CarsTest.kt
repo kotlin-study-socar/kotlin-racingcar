@@ -26,6 +26,14 @@ internal class CarsTest : BehaviorSpec({
                 result.forEach { it.position shouldBe 1 }
             }
         }
+
+        val movedCars = cars.moveAll()
+        `when`("가장 멀리 간 자동차를 조회하면") {
+            val result = movedCars.findMaxPositionCar()
+            then("해당하는 자동차를 반환한다.(복수개 반환 가능)") {
+                result shouldHaveSize 3
+            }
+        }
     }
 }) {
     companion object {
