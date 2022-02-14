@@ -38,7 +38,7 @@ class InputService {
         return input.toInt()
     }
 
-    private fun checkPlayTimeIsNum (input : String) {
+    fun checkPlayTimeIsNum (input : String) {
         for (c in input) {
             if (!c.isDigit()) {
                 throw IllegalInputException(Strings.ERROR_MESSAGE)
@@ -46,7 +46,7 @@ class InputService {
         }
     }
 
-    private fun checkCarNameMoreThanFive(carsName: List<String>) {
+    fun checkCarNameMoreThanFive(carsName: List<String>) {
         for (carName in carsName) {
             if (carName.length >= 5 || carName.isEmpty()) {
                 throw  IllegalInputException(Strings.ERROR_MESSAGE);
@@ -54,7 +54,7 @@ class InputService {
         }
     }
 
-    private fun checkInputIsNull(input: String?) {
+    fun checkInputIsNull(input: String?) {
         if (input == null || input.isEmpty() || input == "null") {
             throw IllegalInputException(Strings.ERROR_MESSAGE)
         }
