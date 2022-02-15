@@ -10,7 +10,7 @@ internal class CarsTest : BehaviorSpec({
 
     given("자동차들 생성 시") {
         `when`("자동차들이 리스트 형태로 인자가 넘어오면") {
-            val result = Cars(carList, MaxFuelGenerator())
+            val result = Cars(carList)
             then("Cars 객체가 생성된다.") {
                 result shouldHaveSize 3
                 result shouldContainAll carList
@@ -19,15 +19,15 @@ internal class CarsTest : BehaviorSpec({
     }
 
     given("생성된 자동차들에") {
-        val cars = Cars(carList, MaxFuelGenerator())
+        val cars = Cars(carList)
         `when`("한 라운드 만큼 이동을 실행하면") {
-            val result = cars.moveAll()
+            val result = cars.moveAll(MaxFuelGenerator())
             then("각 자동차들이 조건에 따라 이동한다.") {
                 result.forEach { it.position shouldBe 1 }
             }
         }
 
-        val movedCars = cars.moveAll()
+        val movedCars = cars.moveAll(MaxFuelGenerator())
         `when`("가장 멀리 간 자동차를 조회하면") {
             val result = movedCars.findMaxPositionCar()
             then("해당하는 자동차를 반환한다.(복수개 반환 가능)") {
