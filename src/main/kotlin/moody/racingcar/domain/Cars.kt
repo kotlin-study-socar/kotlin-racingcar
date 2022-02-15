@@ -7,7 +7,7 @@ class Cars(val cars: List<Car>) : List<Car> by cars {
         return Cars(movedCars)
     }
 
-    fun findMaxPositionCar() = filter { it.isSamePosition(calculateMaxPosition()) }
+    fun findMaxPositionCars() = filter { it.isSamePosition(calculateMaxPosition()) }
 
     private fun calculateMaxPosition() = maxByOrNull { it.position }?.position ?: 0
 }

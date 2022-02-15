@@ -29,7 +29,7 @@ internal class CarsTest : BehaviorSpec({
 
         val movedCars = cars.moveAll(MaxFuelGenerator())
         `when`("가장 멀리 간 자동차를 조회하면") {
-            val result = movedCars.findMaxPositionCar()
+            val result = movedCars.findMaxPositionCars()
             then("해당하는 자동차를 반환한다.(복수개 반환 가능)") {
                 result shouldHaveSize 3
             }
