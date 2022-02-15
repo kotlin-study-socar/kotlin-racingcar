@@ -9,5 +9,5 @@ class Cars(val cars: MutableList<Car>) : MutableList<Car> by cars {
 
     fun findMaxPositionCars() = filter { it.isSamePosition(calculateMaxPosition()) }
 
-    private fun calculateMaxPosition() = maxByOrNull { it.position }?.position ?: 0
+    private fun calculateMaxPosition() = maxByOrNull(Car::position)?.position ?: 0
 }
