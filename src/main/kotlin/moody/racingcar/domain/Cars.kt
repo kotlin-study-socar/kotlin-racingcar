@@ -7,7 +7,10 @@ class Cars(val cars: MutableList<Car>) : MutableList<Car> by cars {
         return Cars(cars)
     }
 
-    fun findMaxPositionCars() = filter { it.isSamePosition(calculateMaxPosition()) }
+    fun findMaxPositionCars(): List<Car> {
+        val maxPosition = calculateMaxPosition()
+        return filter { it.isSamePosition(maxPosition) }
+    }
 
     private fun calculateMaxPosition() = maxByOrNull(Car::position)?.position ?: 0
 }
