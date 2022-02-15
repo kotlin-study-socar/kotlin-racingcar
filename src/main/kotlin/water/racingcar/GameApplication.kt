@@ -31,10 +31,9 @@ class GameApplication(input: InputDto) {
     // 우승자 출력, 공동 우승이면 여러 명을 출력한다.
     private fun printTotalResult() {
         val maxMovedValue = cars.maxBy { it.movedValue }?.movedValue
-        val winners = cars.filter { it.movedValue == maxMovedValue }.map { it.name }.toList()
-
-        val winnerNames = winners.joinToString(separator = ", ")
-        println("${winnerNames}가 최종 우승했습니다.")
+        val winnerNameList = cars.filter { it.movedValue == maxMovedValue }.map { it.name }.toList()
+        val winnerNamesOutput = winnerNameList.joinToString(separator = ", ")
+        println("${winnerNamesOutput}가 최종 우승했습니다.")
     }
 
     private fun printEachRound() {
