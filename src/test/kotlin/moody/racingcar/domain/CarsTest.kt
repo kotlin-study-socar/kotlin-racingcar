@@ -40,6 +40,6 @@ internal class CarsTest : BehaviorSpec({
         private val car1 = Car("a")
         private val car2 = Car("b")
         private val car3 = Car("c")
-        private val carList = listOf(car1, car2, car3)
+        private val carList = mutableListOf(car1, car2, car3)
     }
 }
