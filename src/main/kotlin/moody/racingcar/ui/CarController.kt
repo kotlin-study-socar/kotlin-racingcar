@@ -21,5 +21,4 @@ class CarController {
         }
         outputView.printWinners(carService.findWinners())
     }
-
 }
