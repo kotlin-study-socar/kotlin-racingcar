@@ -12,7 +12,7 @@ fun main(){
     val playingTimes = inputService.readPlayingTimes()
 
     val game = Game(carManager, playingTimes)
-    game.playing(playingTimes)
+    game.playing()
 }
 
 class Application{

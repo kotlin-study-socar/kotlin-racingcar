@@ -3,9 +3,9 @@ package ornn.racingcar.data;
 import ornn.racingcar.manager.CarManager
 import ornn.racingcar.resource.Strings
 
-class Game (private val carManager: CarManager, val playingTimes : Int){
+class Game (private val carManager: CarManager, private val playingTimes : Int){
 
-    fun playing(playingTimes : Int) {
+    fun playing() {
         println("\n" + Strings.RESULT)
         for (i in 1..playingTimes) {
             oneTimes()
