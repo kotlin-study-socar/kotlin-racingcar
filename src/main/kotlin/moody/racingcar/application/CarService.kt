@@ -9,7 +9,7 @@ class CarService(names: List<String>) {
     val cars: Cars
 
     init {
-        cars = Cars(names.map { Car(it) })
+        cars = Cars(names.map { Car(it) } as MutableList<Car>)
     }
 
     fun moveAll(fuelGenerator: FuelGenerator): CarsDto {

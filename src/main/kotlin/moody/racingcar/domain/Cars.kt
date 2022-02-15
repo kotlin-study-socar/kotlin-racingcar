@@ -1,10 +1,10 @@
 package moody.racingcar.domain
 
-class Cars(val cars: List<Car>) : List<Car> by cars {
+class Cars(val cars: MutableList<Car>) : MutableList<Car> by cars {
 
     fun moveAll(fuelGenerator: FuelGenerator): Cars {
-        val movedCars = map { it.move(fuelGenerator.generateFuel()) }
-        return Cars(movedCars)
+        replaceAll { it.move(fuelGenerator.generateFuel()) }
+        return Cars(cars)
     }
 
     fun findMaxPositionCars() = filter { it.isSamePosition(calculateMaxPosition()) }
