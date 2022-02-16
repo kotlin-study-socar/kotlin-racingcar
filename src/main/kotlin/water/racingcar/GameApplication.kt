@@ -3,11 +3,10 @@ package water.racingcar
 import water.racingcar.domain.Car
 import water.racingcar.ui.GameInputView
 import water.racingcar.ui.GameOutputView
-import water.racingcar.util.RandomGenerator
+import water.racingcar.util.RandomGenerator.generateRandomNumber
 
 class GameApplication(private val carNames: List<String>, private val times: Int) {
     private val cars = carNames.map { Car(it) }
-    private val randomGenerator = RandomGenerator()
 
     fun playGame() {
         repeat(times){
@@ -18,7 +17,7 @@ class GameApplication(private val carNames: List<String>, private val times: Int
 
     private fun playEachRound() {
         for (car in cars) {
-            car.move(randomGenerator.generateRandomNumber())
+            car.move(generateRandomNumber())
         }
         GameOutputView.printEachRound(cars)
     }

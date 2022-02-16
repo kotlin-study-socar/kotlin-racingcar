@@ -1,5 +1,9 @@
 package water.racingcar.util
 
-class RandomGenerator {
-    fun generateRandomNumber(): Int = (0..9).random()
+object RandomGenerator {
+    private val startNumber = 0
+    private val endNumber = 9
+    fun generateRandomNumber(): Int {
+        return (startNumber..endNumber).random()
+    }
 }
