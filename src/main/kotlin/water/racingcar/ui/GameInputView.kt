@@ -2,7 +2,13 @@ package water.racingcar.ui
 
 import kotlin.math.abs
 
-class GameConsoleInput {
+object GameInputView {
+    private const val CAR_NAME_INPUT_INFO_MESSAGE = "경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분) "
+    private const val CAR_NAME_INPUT_ERROR_INFO_MESSAGE = "※ 이름은 5자 이하만 가능합니다."
+    private const val PLAY_TIMES_INPUT_INFO_MESSAGE = "시도할 회수는 몇회인가요?"
+    private const val PLAY_TIMES_ERROR_INFO_MESSAGE = "※ 숫자를 입력해주세요. ex) 5"
+    private const val NAME_LENGTH_LIMIT = 5
+
     fun getCarNamesInput(): List<String> {
         var carNameList: List<String> = ArrayList<String>()
         while (carNameList.isEmpty()) {
@@ -46,13 +52,5 @@ class GameConsoleInput {
             return false
         }
         return true
-    }
-
-    companion object {
-        const val CAR_NAME_INPUT_INFO_MESSAGE = "경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분) "
-        const val CAR_NAME_INPUT_ERROR_INFO_MESSAGE = "※ 이름은 5자 이하만 가능합니다."
-        const val PLAY_TIMES_INPUT_INFO_MESSAGE = "시도할 회수는 몇회인가요?"
-        const val PLAY_TIMES_ERROR_INFO_MESSAGE = "※ 숫자를 입력해주세요. ex) 5"
-        const val NAME_LENGTH_LIMIT = 5
     }
 }
