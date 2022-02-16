@@ -12,8 +12,9 @@ object GameOutputView {
 
     fun printEachRound(cars: List<Car>) {
         val output = StringBuilder()
-        for (car in cars)
+        for (car in cars) {
             output.append("$car\n")
+        }
         println("$output")
     }
 }
