@@ -1,16 +1,9 @@
 package water.racingcar.ui
 
-import water.racingcar.dto.InputDto
 import kotlin.math.abs
 
 class GameConsoleInput {
-    fun getInputs(): InputDto {
-        val carNameList: List<String> = getCarNamesInput()
-        val times = getTimesInput()
-        return InputDto(carNameList,times)
-    }
-
-    private fun getCarNamesInput(): List<String> {
+    fun getCarNamesInput(): List<String> {
         var carNameList: List<String> = ArrayList<String>()
         while (carNameList.isEmpty()) {
             println(CAR_NAME_INPUT_INFO_MESSAGE)
@@ -19,7 +12,7 @@ class GameConsoleInput {
         return carNameList
     }
 
-    private fun getTimesInput(): Int {
+    fun getTimesInput(): Int {
         println(PLAY_TIMES_INPUT_INFO_MESSAGE)
         var times = getNumberOfTimes(readLine())
         while (times == null) {
@@ -28,7 +21,7 @@ class GameConsoleInput {
         return times
     }
 
-    fun getNumberOfTimes(input: String?): Int? {
+    private fun getNumberOfTimes(input: String?): Int? {
         val times = try {
             input?.toInt()
         } catch (e: NumberFormatException) {
@@ -38,7 +31,7 @@ class GameConsoleInput {
         return times?.let { abs(it) }
     }
 
-    fun getCarNames(input: String?): List<String> {
+    private fun getCarNames(input: String?): List<String> {
         val nameList = input?.split(",")
         if (input?.isEmpty() == true || !validNameLength(nameList)) {
             return ArrayList()

@@ -1,19 +1,15 @@
 package water.racingcar
 
 import water.racingcar.domain.Car
-import water.racingcar.dto.InputDto
 import water.racingcar.ui.GameConsoleInput
 import water.racingcar.util.RandomGenerator
 
-class GameApplication(input: InputDto) {
-    private val cars = input.carNames.map { Car(it) }
-    private val randomGenerator: RandomGenerator = RandomGenerator();
-    var times = input.times
-        private set
+class GameApplication(private val carNames: List<String>, private val times: Int) {
+    private val cars = carNames.map { Car(it) }
+    private val randomGenerator = RandomGenerator()
 
     fun playGame() {
-        while (times > 0) {
-            times--
+        repeat(times){
             playEachRound()
         }
         printTotalResult()
@@ -42,8 +38,9 @@ class GameApplication(input: InputDto) {
 }
 
 fun main() {
-    val consoleInput = GameConsoleInput()
-    val inputDto = consoleInput.getInputs()
-    val gameApplication = GameApplication(inputDto)
+    val gameConsoleInput = GameConsoleInput()
+    val carNames = gameConsoleInput.getCarNamesInput()
+    val times = gameConsoleInput.getTimesInput()
+    val gameApplication = GameApplication(carNames,times)
     gameApplication.playGame()
 }
