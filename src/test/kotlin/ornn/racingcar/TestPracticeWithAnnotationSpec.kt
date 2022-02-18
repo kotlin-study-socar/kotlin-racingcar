@@ -7,19 +7,15 @@ import ornn.racingcar.resource.Strings
 import ornn.racingcar.service.InputService
 import ornn.racingcar.exception.IllegalInputException
 
-class ApplicationTestWithAnnotationSpec : AnnotationSpec() {
-    companion object {
-        val inputService = InputService()
-    }
+class TestPracticeWithAnnotationSpec : AnnotationSpec() {
 
-    // Kotest @AnnotationSpec
     @Test
     fun 전체이름_널체크() {
         val input = ""
         val actual = assertThrows<IllegalInputException> {
-            inputService.checkInputIsNull(input)
+            InputService.checkInputIsNull(input)
         }
-        actual.message shouldBe Strings.ERROR_MESSAGE
+        actual.message shouldBe Strings.ERROR_MESSAGE + Strings.ERROR_INFO_NULL_INPUT
     }
 
     @Test
@@ -27,9 +23,9 @@ class ApplicationTestWithAnnotationSpec : AnnotationSpec() {
         val input = "socarcar,sukwoo"
         val carsName = input.split(",")
         val actual = assertThrows<IllegalInputException> {
-            inputService.checkCarNameMoreThanFive(carsName)
+            InputService.checkCarNameMoreThanFive(carsName)
         }
-        actual.message shouldBe Strings.ERROR_MESSAGE
+        actual.message shouldBe Strings.ERROR_MESSAGE + Strings.ERROR_INFO_NULL_INPUT
     }
 
 }
