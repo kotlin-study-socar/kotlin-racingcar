@@ -7,18 +7,15 @@ import moody.racingcar.ui.view.OutputView
 
 class CarController {
 
-    private val inputView = InputView
-    private val outputView = OutputView
-
     fun run() {
-        val carNames = inputView.inputCarNames()
-        val round = inputView.inputTryNumber()
+        val carNames = InputView.inputCarNames()
+        val round = InputView.inputTryNumber()
         val carService = CarService(carNames)
 
-        outputView.printStartResultMessage()
+        OutputView.printStartResultMessage()
         repeat(round) {
-            outputView.printRoundResult(carService.moveAll(RandomFuelGenerator()))
+            OutputView.printRoundResult(carService.moveAll(RandomFuelGenerator()))
         }
-        outputView.printWinners(carService.findWinners())
+        OutputView.printWinners(carService.findWinners())
     }
 }
