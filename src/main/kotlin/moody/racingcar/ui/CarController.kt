@@ -12,7 +12,7 @@ class CarController {
         val round = InputView.inputTryNumber()
         val carService = CarService(carNames)
 
-        OutputView.printStartResultMessage()
+        OutputView.printStartResult()
         repeat(round) {
             OutputView.printRoundResult(carService.moveAll(RandomFuelGenerator()))
         }

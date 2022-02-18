@@ -3,14 +3,12 @@ package moody.racingcar.ui.view
 import moody.racingcar.application.dto.CarDto
 
 object OutputView {
-    fun printStartResultMessage() {
+    fun printStartResult() {
         println("실행 결과")
     }
 
     fun printRoundResult(cars: List<CarDto>) {
-        cars.forEach {
-            println("${it.name} : ${"-".repeat(it.position)}")
-        }
+        cars.forEach { println("${it.name} : ${"-".repeat(it.position)}") }
         println()
     }
 
