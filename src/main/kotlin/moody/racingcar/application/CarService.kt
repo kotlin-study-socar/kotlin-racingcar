@@ -13,7 +13,7 @@ class CarService(names: List<String>) {
     }
 
     fun moveAll(fuelGenerator: FuelGenerator): CarsDto {
-        return CarsDto.toDto(cars.moveAll(fuelGenerator))
+        return CarsDto.from(cars.moveAll(fuelGenerator))
     }
 
     fun findWinners(): List<String> {

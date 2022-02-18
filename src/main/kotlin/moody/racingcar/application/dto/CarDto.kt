@@ -5,7 +5,7 @@ import moody.racingcar.domain.Car
 data class CarDto(val name: String, val position: Int) {
 
     companion object {
-        fun toDto(car: Car): CarDto {
+        fun from(car: Car): CarDto {
             return CarDto(car.name, car.position)
         }
     }

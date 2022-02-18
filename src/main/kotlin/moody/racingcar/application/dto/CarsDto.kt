@@ -5,8 +5,8 @@ import moody.racingcar.domain.Cars
 data class CarsDto(val cars: List<CarDto>) : List<CarDto> by cars {
 
     companion object {
-        fun toDto(cars: Cars): CarsDto {
-            return CarsDto(cars.map { CarDto.toDto(it) })
+        fun from(cars: Cars): CarsDto {
+            return CarsDto(cars.map { CarDto.from(it) })
         }
     }
 }
