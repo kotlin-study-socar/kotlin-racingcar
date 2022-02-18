@@ -6,15 +6,14 @@ import moody.racingcar.domain.Cars
 import moody.racingcar.domain.FuelGenerator
 
 class CarService(names: List<String>) {
-    val cars: Cars
+    private val cars: Cars
 
     init {
         cars = Cars(names.map { Car(it) } as MutableList<Car>)
     }
 
     fun moveAll(fuelGenerator: FuelGenerator): CarsDto {
-        val movedCars = cars.moveAll(fuelGenerator)
-        return CarsDto.toDto(movedCars)
+        return CarsDto.toDto(cars.moveAll(fuelGenerator))
     }
 
     fun findWinners(): List<String> {
