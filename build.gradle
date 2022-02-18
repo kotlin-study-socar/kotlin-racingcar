@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
 }
 
 group 'camp.nextstep.edu'
@@ -9,18 +9,25 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     testImplementation 'org.assertj:assertj-core:3.16.1'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.2'
+
+    testImplementation("io.kotest:kotest-runner-junit5:4.2.0")
+    testImplementation("io.kotest:kotest-assertions-core:4.2.0")
 }
 
 compileKotlin {
     kotlinOptions.jvmTarget = '1.8'
+    kotlinOptions {
+        languageVersion = "1.5"
+    }
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = '1.8'
-}
-test {
-    useJUnitPlatform()
 }
