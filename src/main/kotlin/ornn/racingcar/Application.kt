@@ -1,25 +1,16 @@
 package ornn.racingcar
 
-import ornn.racingcar.Application.Companion.inputService
-import ornn.racingcar.data.Game
-import ornn.racingcar.manager.CarManager
+import ornn.racingcar.manager.Cars
+import ornn.racingcar.resource.Strings
+import ornn.racingcar.service.CarService
 import ornn.racingcar.service.InputService
-import java.util.*
 
 fun main(){
-    val carNames = inputService.readCarNames()
-    val carManager = CarManager(carNames)
-    val playingTimes = inputService.readPlayingTimes()
+    val carNames = InputService.readCarNames()
+    val cars = Cars.fromName(carNames)
+    val playingTimes = InputService.readPlayingTimes()
+    val carService = CarService(cars)
 
-    val game = Game(carManager, playingTimes)
-    game.playing()
+    carService.playing(playingTimes)
+    println(Strings.ANNOUNCE_WINNER + carService.getResult().joinToString(", "))
 }
-
-class Application{
-    companion object{
-        val inputService = InputService()
-        val random = Random()
-    }
-}
-
-
