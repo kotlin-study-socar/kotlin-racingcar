@@ -14,7 +14,7 @@ class InputServiceTest : BehaviorSpec({
             val input = ""
             then("에러가 발생한다") {
                 shouldThrow<IllegalInputException> {
-                    InputService.checkInputIsNull(input)
+                    InputService.validateInputIsNull(input)
                 }
             }
         }
@@ -24,7 +24,7 @@ class InputServiceTest : BehaviorSpec({
             val carsName = input.split(",")
             then("오류가 발생해야된다") {
                 assertThrows<IllegalInputException> {
-                    InputService.checkCarNameMoreThanFive(carsName)
+                    InputService.validateCarNameMoreThanFive(carsName)
                 }
             }
         }
@@ -36,7 +36,7 @@ class InputServiceTest : BehaviorSpec({
             val input = ""
             then("오류가 발생해야된다.") {
                 assertThrows<IllegalInputException> {
-                    InputService.checkInputIsNull(input)
+                    InputService.validateInputIsNull(input)
                 }
             }
         }
@@ -45,7 +45,7 @@ class InputServiceTest : BehaviorSpec({
             val input = "kk"
             then("오류가 발생해야된다.") {
                 assertThrows<NumberFormatException> {
-                    InputService.checkPlayTimeIsNum(input)
+                    InputService.validatePlayTimeIsNum(input)
                 }
             }
         }
